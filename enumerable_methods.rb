@@ -1,4 +1,3 @@
-#!/usr/bin/ruby
 # This is the enumerable methods project done by Mohammad and Kingsley
 module Enumerable
   def my_each
