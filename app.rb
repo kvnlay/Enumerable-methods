@@ -1,7 +1,7 @@
 require_relative 'enumerable_methods'
 
 #### TESTS
-a = [1, 3, :haha, 'Ruby', 7, 8, 9, 10, 1000, 4.5, 'Go']
+# a = [1, 3, :haha, 'Ruby', 7, 8, 9, 10, 1000, 4.5, 'Go']
 
 ## my_each ##
 # a.my_each do |item|
