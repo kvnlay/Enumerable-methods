@@ -22,7 +22,7 @@ module Enumerable
     new_arr = []
     object = self
     object.my_each do |x|
-      (new_arr << x) if yield(x) == true
+      (new_arr << x) if yield(x)
     end
     new_arr
   end
@@ -30,7 +30,7 @@ module Enumerable
   def my_all?
     object = self
     object.my_each do |x|
-      return false if yield(x) == false
+      return false unless yield(x)
     end
     true
   end
@@ -38,7 +38,7 @@ module Enumerable
   def my_any?
     object = self
     object.my_each do |x|
-      return true if yield(x) == true
+      return true if yield x
     end
     false
   end
@@ -46,7 +46,7 @@ module Enumerable
   def my_none?
     object = self
     object.my_each do |x|
-      return false if yield(x) == true
+      return false if yield(x)
     end
     true
   end
@@ -79,33 +79,3 @@ module Enumerable
     result
   end
 end
-
-#### TESTS
-
-# increase_by_1 = Proc.new{ |x| x + 1 }
-# p [1,3,4,5,6,7,8,10].my_map(&increase_by_1);
-
-# def multiply_els(array)
-#   array.my_inject { |result, item| result * item}
-# end
-
-# puts multiply_els([1,2,3,4,5])
-
-a = [1, 2, 3, 4]
-
-# result  = a.my_inject { |result, x| result + x}
-# p result
-
-# a = [1,4,:bla, "goat"]
-
-# b = [1,2,4,5,6,"bla"]
-
-# a.my_each_with_index do |x, i|
-#   puts "#{i} : #{x}"
-# end
-
-test = a.my_select { |x| x.is_a? Integer }
-p test
-
-# test2 = b.my_none?{|x| x.is_a? Symbol}
-# p test2
