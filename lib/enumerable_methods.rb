@@ -30,7 +30,7 @@ module Enumerable
   def my_all?
     object = self
     object.my_each do |x|
-      return false unless yield(x)
+      return false unless yield x
     end
     true
   end
